@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 2.8.10)
 include(ExternalProject)
 
 ExternalProject_Add(utf8cpp
-    SVN_REPOSITORY http://svn.code.sf.net/p/utfcpp/code
+    GIT_REPOSITORY https://github.com/PokeEngineer/utfcpp.git
     CONFIGURE_COMMAND ""
     BUILD_COMMAND ""
     INSTALL_COMMAND ""

@@ -5,7 +5,7 @@ cmake_minimum_required(VERSION 2.8.10)
 include(ExternalProject)
 
 ExternalProject_Add(googletest
-    SVN_REPOSITORY http://googletest.googlecode.com/svn/trunk
+    GIT_REPOSITORY https://github.com/google/googletest.git
     CMAKE_ARGS -DCMAKE_ARCHIVE_OUTPUT_DIRECTORY:PATH=
                -Dgtest_disable_pthreads=ON
                -Dgtest_force_shared_crt=ON
@@ -17,7 +17,7 @@ ExternalProject_Add(googletest
 set_target_properties(googletest PROPERTIES EXCLUDE_FROM_ALL TRUE)
 
 ExternalProject_Get_Property(googletest source_dir)
-set(GTEST_INCLUDE_DIR "${source_dir}/include" PARENT_SCOPE)
+set(GTEST_INCLUDE_DIR "${source_dir}/googletest/include" PARENT_SCOPE)
 
 ExternalProject_Get_Property(googletest binary_dir)
 set(GTEST_LIBS_DIR "${binary_dir}")
